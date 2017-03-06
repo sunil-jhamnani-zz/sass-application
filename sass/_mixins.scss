@@ -1,0 +1,77 @@
+@mixin inline-block() {
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin clearfix() {
+  & {
+    clear: both;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin rowblock() {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin text-section($padding_top, $color) {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  color: $color;
+  padding-top: $padding_top;
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@mixin navbar($float, $text_color) {
+  float: $float;
+  padding: 0;
+  margin-right: 30px;
+
+  ul {
+    padding: 0;
+    margin: 0 -0px 0 0;
+    line-height: 0;
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      @include inline-block;
+
+      a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: $text_color;
+      }
+    }
+  }
+}
+
+@mixin seperator($width, $color) {
+  width: $width;
+  border: 2px solid $color;
+  margin: 0 auto;
+}
