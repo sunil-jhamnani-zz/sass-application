@@ -28,19 +28,14 @@
 
 @mixin rowblock() {
   position: relative;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  padding: 50px 0;
 }
 
-@mixin text-section($padding_top, $color) {
+@mixin text-section($color) {
   text-align: center;
   width: 50%;
   margin: 0 auto;
   color: $color;
-  padding-top: $padding_top;
-
   h1 {
     font-size: 30px;
   }
@@ -53,7 +48,6 @@
 
   ul {
     padding: 0;
-    margin: 0 -0px 0 0;
     line-height: 0;
     li {
       padding: 0;
